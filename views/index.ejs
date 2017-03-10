@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css"/>
+    <meta charset="UTF-8"/>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+</head>
+<body>
+<div class="login-page">
+    <div class="form">
+        <form class="login-form" method="post" action="/login">
+            <input type="text" placeholder="아이디" name="id" required/>
+            <input type="password" placeholder="비밀번호" name="password" required/>
+            <button>로그인</button>
+        </form>
+    </div>
+</div>
+</body>
 </html>

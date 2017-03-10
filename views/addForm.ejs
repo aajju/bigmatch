@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+</head>
+<body>
+<% include header.ejs %>
+<br>
+<div class="container" style="margin-top: 50px">
+    <form class="form-horizontal" method="post" action="/main/add">
+        <div class="form-group">
+            <label for="category" class="col-sm-2 control-label">카테고리</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="category" name="category" placeholder="카테고리"
+                       required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="match_day" class="col-sm-2 control-label">경기날짜</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="match_day" placeholder="경기날짜"
+                       name="match_day" required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="match_time" class="col-sm-2 control-label">경기시각</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="match_time" placeholder="경기시각"
+                       name="match_time" required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="home_team" class="col-sm-2 control-label">홈 팀</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="home_team" placeholder="홈 팀"
+                       name="home_team" required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="away_team" class="col-sm-2 control-label">어웨이 팀</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="away_team" placeholder="어웨이 팀"
+                       name="away_team" required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="url" class="col-sm-2 control-label">URL</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="url" placeholder="URL"
+                       name="url" required="required"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-default">추가</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
+
+
