@@ -14,7 +14,13 @@ router.use(function (req, res, next) {
 /* GET home page. */
 router.get('/', function (req, res) {
     MatchDao.getAllMatches(function (isSuccessful, errorMessage, data) {
-        res.render('main', {data: data, title: '빅매치 관리자 페이지'});
+        if(!isSuccessful){
+            return res.send('<script>alert("메인 페이지를 불러오는데 오류가 발생하였습니다"); history.back(); </script>');
+        } else if (data == null) {
+            return res.send('<script>alert("DB가 비어 있습니다"); history.back(); </script>');
+        } else {
+            res.render('main', {data: data, title: '빅매치 관리자 페이지'});
+        }
     })
 });
 
@@ -59,12 +65,14 @@ router.post('/modify', function (req, res) {
     let home_team = req.body.home_team;
     let away_team = req.body.away_team;
     let url = req.body.url;
+    let small_category = req.body.small_category;
+    let comments = req.body.comments;
 
 
-    MatchDao.updateMatch(new Match(id, category, match_day, match_time, home_team, away_team, url), function (errorMessage, data) {
+    MatchDao.updateMatch(new Match(id, category, match_day, match_time, home_team, away_team, url, small_category, comments), function (errorMessage, data) {
         console.log(errorMessage);
         if (errorMessage) {
-            return res.send('<script>alert("수정에 실패하였습니다!"); history.back(); </script>');
+            return res.send('<script>alert("수정에 실패함"); history.back(); </script>');
         }
 
         res.send('<script> alert("수정되었습니다."); location.href="/main" </script>');
@@ -82,9 +90,10 @@ router.post('/add', function (req, res) {
     let home_team = req.body.home_team;
     let away_team = req.body.away_team;
     let url = req.body.url;
+    let small_category = req.body.small_category;
+    let comments = req.body.comments;
 
-
-    MatchDao.insertMatch(new Match(0, category, match_day, match_time, home_team, away_team, url), function (errorMessage, data) {
+    MatchDao.insertMatch(new Match(0, category, match_day, match_time, home_team, away_team, url, small_category, comments), function (errorMessage, data) {
         console.log(errorMessage);
         if (errorMessage) {
             return res.send('<script>alert("추가에 실패하였습니다!"); history.back(); </script>');

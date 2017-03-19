@@ -17,6 +17,8 @@
             <th>홈 팀</th>
             <th>어웨이 팀</th>
             <th>URL</th>
+            <th>small 카테고리</th>
+            <th>코멘트</th>
             <th>수정</th>
             <th>삭제</th>
         </tr>
@@ -31,6 +33,8 @@
             <td><%= each.home_team %></td>
             <td><%= each.away_team %></td>
             <td style="width: 100px"><%= each.url %></td>
+            <td><%= each.small_category %></td>
+            <td><%= each.comments %></td>
             <td><a href="/main/modify/<%= each.id %>">수정</a></td>
             <td><a href="/main/delete/<%= each.id %>">삭제</a></td>
         </tr>
@@ -39,6 +43,75 @@
     </table>
 
 </div>
+
+<p>카테고리 설명</p>
+<tr>
+    <td>1</td>
+    <td>epl</td>
+    <td>12</td>
+    <td>한국인 메이저리거</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td>la liga</td>
+    <td>13</td>
+    <td>mlb</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td>bundesriga</td>
+    <td>14</td>
+    <td>한국 국대 야구</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td>seriaA</td>
+    <td>15</td>
+    <td>기타 국대 야구</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td>k league</td>
+    <td>16</td>
+    <td>롤챔스</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td>챔스</td>
+    <td>17</td>
+    <td>롤드컵</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td>유로파</td>
+    <td>18</td>
+    <td>롤 기타</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td>아챔</td>
+    <td>19</td>
+    <td>오버워치</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td>한국 국대 축구</td>
+    <td>20</td>
+    <td>스타크래프트</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td>기타 국대 축구</td>
+    <td>21</td>
+    <td>기타 게임</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td>kbo</td>
+    <td>22</td>
+    <td>기타 스포츠</td>
+</tr>
+
 
 </body>
 </html>
